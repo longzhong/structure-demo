@@ -1,3 +1,13 @@
+## 使用方法
+    npm run build 
+    <!--打包生成dist，生产环境包-->
+    npm run dev
+    <!--开启本地服务器，打开开发环境-->
+    npm run version
+    <!--查看当前包的webpack版本，记住要当前目录安装wbepack，如果你全局安装了，uninstall一下全局安装的webpack，再重申一遍，不建议全局安装webpack-->
+
+
+
 ## 目录结构
 
 * __src__   --开发源代码
