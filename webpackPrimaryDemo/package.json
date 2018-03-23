@@ -4,7 +4,10 @@
   "description": "A primary demo designed by Zaking with webpack4",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build" : "webpack --mode production",
+    "dev" : "webpack-dev-server --mode development",
+    "version" : "webpack -v"
   },
   "keywords": [
     "webpack4",

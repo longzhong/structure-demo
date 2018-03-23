@@ -1,0 +1,23 @@
+#cssDiv{
+  	background:orange;  
+  	color:blue;    
+}
+#imgBgDiv{
+	background: url(../images/head.jpg) no-repeat;
+	background-size: 100% 100%;
+	width: 300px;
+	height: 300px;
+}
+/*设置图片大小*/
+#imgTag{
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	box-shadow: 10px 10px 0 black;
+	display: flex;  
+}
+#noUse{
+	color: darkblue;
+	font-size: 200px;
+	text-align: center;
+}

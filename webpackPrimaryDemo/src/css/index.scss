@@ -1,0 +1,7 @@
+$color: blue;
+#sassDiv {
+  $width: 200px;
+  width: $width;
+  height:200px;
+  background-color: $color;
+}
