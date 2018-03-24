@@ -27,7 +27,7 @@
 <!--先从少的说起吧-->
 * __dependencies__ --在生产环境中仍旧需要的包或者插件
   * __html-withimg-loader__ --处理img标签中通过src引入图片的打包
-* __browserslist__ --浏览器目录
+* __browserslist__ --浏览器目录,一些插件或者loader会使用到这个配置（比如autoprefixer）,写在这里是为了提取公共配置
 * __devDependencies__ --开发环境所依赖的包或者插件
   * __autoprefixer__ --自动添加CSS3前缀
   * __babel-core__ --babel转义的核心插件
