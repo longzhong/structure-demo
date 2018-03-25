@@ -1,0 +1,26 @@
+/*css样式，测试css-loader，style-loader等*/
+#cssDiv{
+  	background:orange;  
+  	color:blue;    
+}
+/*背景图片打包，测试url-loader，file-loader等跟路径有关的loader*/
+#imgBgDiv{
+	background: url(../images/head.jpg) no-repeat;
+	background-size: 100% 100%;
+	width: 300px;
+	height: 300px;
+}
+/*设置html引入图片的大小，css样式是为了测试postcss，autoprefixer是否生效*/
+#imgTag{
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	box-shadow: 10px 10px 0 black;
+	display: flex;  
+}
+/*无用的css样式，测试purify-css，purifycss-webpack插件在打包的时候是否会去除未用样式*/
+#noUse{
+	color: darkblue;
+	font-size: 200px;
+	text-align: center;
+}
