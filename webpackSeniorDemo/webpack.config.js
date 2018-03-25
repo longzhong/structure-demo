@@ -10,18 +10,27 @@ const htmlPlugin= require('html-webpack-plugin');
 const extractTextPlugin = require("extract-text-webpack-plugin");
 /*在打包的时候除去未使用到的css样式*/
 const PurifyCSSPlugin = require("purifycss-webpack");
-/*公共路径配置*/
-var webpath={
-    publicPath:"http://192.168.199.124:9090/"
+
+/*在这里引入entry文件的路径*/
+const entry =  require("./entry.js");
+
+/*静态资源文件路径配置*/
+/*根据参数的不同来区分不同的环境*/
+if(process.env.type == "build"){
+    var webpath={
+        publicPath:"http://www.zaking.com/"
+    }
+}else{
+    var webpath={
+        publicPath:"http://192.168.199.124:9090/"
+    }
 }
 
 module.exports={
   /*开始调试模式，博客中有详细的解释*/
     devtool: 'source-map',
     /*入口文件*/
-    entry:{
-        main:'./src/main.js',
-    },
+    entry:entry.path,
     /*出口文件*/
     output:{
       /*绝对路径地址*/

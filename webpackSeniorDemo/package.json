@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build" : "webpack --mode production",
-    "dev" : "webpack-dev-server --mode development",
-    "version" : "webpack -v"
+    "build": "set type=build&webpack --mode production",
+    "dev": "set type=dev&webpack-dev-server --mode development",
+    "version": "webpack -v"
   },
   "keywords": [
     "webpack4",
@@ -39,7 +39,8 @@
     "webpack-dev-server": "^3.1.1"
   },
   "dependencies": {
-    "html-withimg-loader": "^0.1.16"
+    "html-withimg-loader": "^0.1.16",
+    "jquery": "^3.3.1"
   },
   "browserslist": [
     "> 1%",
