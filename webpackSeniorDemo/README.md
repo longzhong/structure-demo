@@ -1,4 +1,6 @@
 ## 使用方法
+    npm install
+    <!-- 安装依赖包 -->
     npm run build 
     <!--打包生成dist，生产环境包-->
     npm run dev
