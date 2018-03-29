@@ -5,7 +5,10 @@
 const entry ={};  
 //声明路径属性
 entry.path={
-    main:'./src/main.js'  
+    main:'./src/main.js',
+    //引入
+    jquery:'jquery',
+    vue:"vue"
 }
 //导出该变量
 module.exports = entry;

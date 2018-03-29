@@ -14,6 +14,9 @@ const PurifyCSSPlugin = require("purifycss-webpack");
 /*在这里引入entry文件的路径*/
 const entry =  require("./entry.js");
 
+//引入webpack
+const webpack = require('webpack');
+
 /*静态资源文件路径配置*/
 /*根据参数的不同来区分不同的环境*/
 if(process.env.type == "build"){
@@ -39,6 +42,12 @@ module.exports={
         filename:'[name].js',
         /*公共路径，主要作用就是处理静态文件路径的*/
         publicPath:webpath.publicPath
+    },
+    // 配置别名
+    resolve: {
+      alias: {
+        'vue$': 'vue/dist/vue.esm.js'
+      }
     },
     /*loader配置*/
 module:{
@@ -114,8 +123,22 @@ plugins:[
     /*如果想要在打包的时候把未使用的css删除掉，需要去匹配所有的DOM树以确定哪些css用到了*/
     new PurifyCSSPlugin({
         paths: glob.sync(path.join(__dirname, 'src/*.html')),
-    })
+    }),
+    //创建一个webpack下的ProvidePlugin插件的实例，使全局都可以使用jQuery
+    new webpack.ProvidePlugin({
+        $:"jquery",
+        vue:"vue"
+    }),
+    new webpack.optimize.SplitChunksPlugin({
+      chunks: "all",
+      minSize: 20000,
+      minChunks: 1,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      name: true
+  })
 ],
+
 /*开发服务*/
     devServer:{
         open:true, //是否自动打开浏览器
