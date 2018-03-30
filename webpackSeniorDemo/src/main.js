@@ -22,3 +22,7 @@ var app = new Vue({
     message: 'Hello Vue!'
   }
 })
+
+//读取json
+var json =require('../package.json');
+document.getElementById("jsonDiv").innerHTML= json.name;

@@ -21,6 +21,5 @@
 * __package.json__  --基础配置目录，laoder及plugins版本记录、公共配置等
 * __postcss.config.js__ --postcss公共配置文件
 * __webpack.config.js__ --webpack配置文件
+* __public__ --静态资源目录
 
-
-## 进阶webpack Demo的package.json的简要介绍

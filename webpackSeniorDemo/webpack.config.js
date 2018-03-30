@@ -10,7 +10,8 @@ const htmlPlugin= require('html-webpack-plugin');
 const extractTextPlugin = require("extract-text-webpack-plugin");
 /*在打包的时候除去未使用到的css样式*/
 const PurifyCSSPlugin = require("purifycss-webpack");
-
+/*引入copywebpackPlugin,用于静态资源的集中输出*/
+const copyWebpackPlugin= require("copy-webpack-plugin");
 /*在这里引入entry文件的路径*/
 const entry =  require("./entry.js");
 
@@ -136,9 +137,21 @@ plugins:[
       maxAsyncRequests: 5,
       maxInitialRequests: 3,
       name: true
-  })
+  }),
+    new webpack.BannerPlugin('author:zaking'),
+    new copyWebpackPlugin([{
+        from:__dirname+'/src/public',
+        to:'./public'
+    }])
 ],
-
+watchOptions:{
+    //检测修改的时间，以毫秒为单位
+    poll:1000, 
+    //防止重复保存而发生重复编译错误。这里设置的500是半秒内重复保存，不进行打包操作
+    aggregateTimeout:500, 
+    //不监听的目录
+    ignored:/node_modules/, 
+},
 /*开发服务*/
     devServer:{
         open:true, //是否自动打开浏览器
