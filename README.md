@@ -1,4 +1,4 @@
-# structure-demo
+# webpack-demo
 
 > webpackPrimaryDemo
 
